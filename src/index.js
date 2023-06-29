@@ -9,6 +9,7 @@ const {
 
 // import commands
 const { help } = require("./commands/commands.js");
+const { application } = require("express");
 
 // Client startup
 
@@ -21,9 +22,9 @@ client.on("ready", async () => {
 
   let commands;
   if (guild) {
-    commands = guild.commands;
+    commands = application.commands;
   } else {
-    commands = client.application?.commands;
+    commands = application.commands;
   }
 
   commands?.create(help.preview);
