@@ -5,6 +5,7 @@ const {
   Interaction,
   GatewayIntentBits,
   guild,
+  ClientApplication,
 } = require("discord.js");
 
 // import commands
@@ -22,9 +23,9 @@ client.on("ready", async () => {
 
   let commands;
   if (guild) {
-    commands = application.commands;
+    commands = ClientApplication.commands;
   } else {
-    commands = application.commands;
+    commands = ClientApplication.commands;
   }
 
   commands?.create(help.preview);
